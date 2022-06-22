@@ -8,11 +8,11 @@ Build form in react such as:
 
 
 Tasks:
-* Form should be able to create object Person
-* On submit the object Person should be insereted in table as a row
-* There shoudl be an option to remove object from the table
+* Form should be able to create Person object
+* On submitting the object Person should insert the object in the table as a row
+* There should be an option to remove objects from the table
 
 
-Hints: 
-* Focus should be on the functionalty
+Hints:
+* Focus should be on the functionality
 * Do not use external component libs 
