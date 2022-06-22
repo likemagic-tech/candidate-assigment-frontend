@@ -2,8 +2,9 @@
 
 Build form in react such as:
 
-![image](https://user-images.githubusercontent.com/37541495/175038008-7296d6f9-a0a0-4306-9496-d6893b2fd46f.png)
-![image](https://user-images.githubusercontent.com/37541495/175037915-362e3209-5a2e-4146-ab8c-d2b1880eaf0f.png)
+![image](https://user-images.githubusercontent.com/37541495/175038383-fa68813b-05fb-48a9-a135-c63d8ac1f477.png)
+![Screenshot 2022-06-22 at 15 16 34](https://user-images.githubusercontent.com/37541495/175038459-95104d14-9b94-49e1-8fa8-d49dd61d16bf.png)
+
 
 
 Tasks:
