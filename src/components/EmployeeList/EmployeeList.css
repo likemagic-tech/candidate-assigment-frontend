@@ -1,0 +1,25 @@
+table {
+    border: 1px solid lightgray;
+    width: 100%;
+    padding: 1px;
+    box-sizing: border-box;
+    margin-top: 2rem
+}
+
+tbody {
+    border-bottom: 1px solid lightgray;
+}
+
+th {
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    padding: 2px 4px;
+}
+
+td {
+    text-align: center;
+}
+
+.list-container{
+    text-align: center;
+}

@@ -1,0 +1,38 @@
+header {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.5rem 0rem;
+  background-color: whitesmoke;
+  color: black;
+  box-shadow: 0 2px 2px 2px thistle;
+  justify-content: space-between;
+}
+
+header > div {
+  margin-right: 5rem;
+}
+
+header > div > button {
+  background-color: inherit;
+  font-size: medium;
+  color: darkslategrey;
+  margin: 2rem;
+  padding: 0.5rem;
+  border: none;
+  border-bottom-style: groove;
+  border-bottom-color: var(--company-color);
+  border-bottom-width: 2px;
+}
+
+header > div > button:hover {
+  opacity: 0.4;
+}
+
+
+h1 {
+  padding: 5px 20px;
+  font-size: 20px;
+}
