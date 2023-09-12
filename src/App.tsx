@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useReducer } from 'react';
 import './App.css';
+import { EmptyState } from './lib/components/empty-state';
+import { UserForm } from './lib/components/user-form';
+import { UsersTable } from './lib/components/users-table';
+import { UsersContext, initialUsersState, usersReducer } from './lib/store';
 
 function App() {
+  const [users, dispatch] = useReducer(usersReducer, initialUsersState);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UsersContext.Provider value={{users, dispatch}}>
+      <UserForm />
+      {
+        users.length ? <UsersTable /> : <EmptyState/>
+      }
+    </UsersContext.Provider>
   );
 }
 
