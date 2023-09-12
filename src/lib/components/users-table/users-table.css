@@ -1,0 +1,57 @@
+table {
+    --table-border: 1px solid lightgray;
+    --table-background-color: whitesmoke;
+
+    border-collapse: collapse;
+    margin-block: 1rem;
+    border-bottom: var(--table-border);
+}
+
+table caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: left;
+    margin-block: 1rem;
+}
+
+table th {
+    border-bottom: var(--table-border);
+    background-color: var(--table-background-color);
+    min-width: 7rem;
+    text-transform: uppercase;
+}
+
+table tr:nth-child(even) td {
+    background-color: var(--table-background-color);
+}
+
+table th,
+table td {
+    padding: 1ch 2ch;
+}
+
+table td:not(:last-child) {
+    border-right: var(--table-border);
+}
+
+.table-header-user-name,
+.table-cell-user-name {
+    text-align: left;
+}
+.table-header-user-gender,
+.table-cell-user-gender {
+    text-align: right;
+}
+.table-header-user-birthdate,
+.table-cell-user-birthdate {
+    text-align: right;
+}
+.table-header-user-salary,
+.table-cell-user-salary {
+    text-align: right;
+}
+.table-header-user-actions,
+.table-cell-user-actions {
+    text-align: right;
+}
+
