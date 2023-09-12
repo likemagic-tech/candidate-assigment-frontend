@@ -1,0 +1,11 @@
+/* This should be an unique class name for the component */
+
+form .form-control label::after {
+    content: ':'
+}
+
+form .form-control span {
+    margin-inline: 0.5ex 0;
+    color: red;
+    vertical-align: super;
+}
