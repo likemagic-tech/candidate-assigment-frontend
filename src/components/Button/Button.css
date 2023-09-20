@@ -1,0 +1,18 @@
+.button {
+    background: transparent;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.button--info {
+    border: 1px solid #2196f3;
+    color: #2196f3;
+}
+
+.button--danger {
+    border: 1px solid #e53935;
+    color: #e53935;
+}
