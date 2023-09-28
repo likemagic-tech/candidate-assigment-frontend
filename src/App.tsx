@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
 import './App.css';
 
-function App() {
+import { Person } from './model/Person';
+
+import PersonForm from './components/PersonForm/PersonForm';
+import PersonList from './components/PersonList/PersonList';
+
+const App = () => {
+  const [persons, setPersons] = useState<Person[]>([]);
+
+  const handleAddPerson = (person: Person) => {
+    setPersons([...persons, { ...person }]);
+  };
+
+  const handleDeletePerson = (index: number) => {
+    const updatedPersons = [...persons];
+
+    updatedPersons.splice(index, 1);
+
+    setPersons(updatedPersons);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <PersonForm onAddPerson={handleAddPerson} />
+      <PersonList persons={persons} onDeletePerson={handleDeletePerson} />
     </div>
   );
-}
+};
 
 export default App;

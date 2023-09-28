@@ -1,0 +1,12 @@
+.inputField {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+input {
+    padding: 5px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
