@@ -1,0 +1,19 @@
+.person-form {
+    width: 90%;
+    padding: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.salary {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.salary-spacing {
+    margin: 0 10px 0 10px;
+}
+
+select {
+    height: fit-content;
+}
