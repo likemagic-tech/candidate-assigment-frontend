@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
+.inline-block {
+	display: inline-block;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.h-screen {
+	height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.w-screen {
+	height: 100vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.w-full {
+	width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.flex {
+	display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.flex-column {
+	flex-direction: column;
+}
+
+.horizontal-gap-10 {
+	column-gap: 10px;
+}
+
+.vertical-gap-20 {
+	row-gap: 20px;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.padding-5 {
+	padding: 5px;
+}
+
+.padding-20 {
+	padding: 20px;
+}
+
+.table-b-colapse {
+	border-collapse: collapse;
+}
+
+.border-bottom-1 {
+	border-bottom: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+}
+
+.border-green {
+	border-color: green;
+}
+
+.color-green {
+	color: green;
+}
+
+.border-red {
+	border-color: red;
+}
+
+.color-red {
+	color: red;
+}
+
+.cursor-pointer {
+	cursor: pointer;
 }
