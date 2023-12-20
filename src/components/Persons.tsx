@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import PersonForm from './form/PersonForm';
 import PersonList from './table/PersonList';
 import { Person } from '../types/Person';
@@ -10,11 +10,15 @@ const Persons = () => {
 		setPersons([...persons, person]);
 	};
 
+	const removePerson = (personToRemove: Person) => {
+		setPersons([...persons.filter((person) => person !== personToRemove)]);
+	};
+
 	return (
-		<Fragment>
+		<>
 			<PersonForm addPerson={addPerson} />
-			<PersonList persons={persons} />
-		</Fragment>
+			<PersonList persons={persons} removePerson={removePerson} />
+		</>
 	);
 };
 

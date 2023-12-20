@@ -11,7 +11,7 @@ const Input = ({
 }: InputProps) => {
 	return (
 		<div>
-			<label htmlFor='name'>
+			<label htmlFor={name}>
 				{label}: {required ? <span>*</span> : ''}
 			</label>
 			<input

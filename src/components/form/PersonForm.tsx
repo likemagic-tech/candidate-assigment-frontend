@@ -1,10 +1,11 @@
-import { ChangeEvent, FormEvent, Fragment, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { Gender } from '../../types/Gender';
 import { Currency } from '../../types/Currency';
 import { Person } from '../../types/Person';
 import { PersonFormProps } from './PersonForm.types';
 import './personForm.style.css';
 import Input from '../input/Input';
+import SalaryInput from '../salaryInput/SalaryInput';
 
 const personInitialState = {
 	name: '',
@@ -15,26 +16,19 @@ const personInitialState = {
 
 const PersonForm = ({ addPerson }: PersonFormProps) => {
 	const [person, setPerson] = useState<Person>(personInitialState);
-	const [currency, setCurrency] = useState<Currency>(Currency.CHF);
 
-	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+	const handleChange = (
+		event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
+	) => {
 		setPerson((prevPerson) => ({
 			...prevPerson,
 			[event.target.name]: event.target.value,
 		}));
 	};
 
-	const handleCurrencyChange = (event: ChangeEvent<HTMLSelectElement>) => {
-		setCurrency(event.target.value as Currency);
-	};
-
 	const handleOnSubmit = (event: FormEvent) => {
 		event.preventDefault();
-		const personToAdd = {
-			...person,
-			salary: `${person.salary} ${currency}`,
-		};
-		addPerson(personToAdd);
+		addPerson(person);
 		setPerson(personInitialState);
 	};
 
@@ -61,7 +55,7 @@ const PersonForm = ({ addPerson }: PersonFormProps) => {
 			<div>
 				<label htmlFor='gender'>Gender:</label>
 				{Object.values(Gender).map((gender) => (
-					<Fragment key={gender}>
+					<div key={gender}>
 						<input
 							type='radio'
 							name='gender'
@@ -71,27 +65,17 @@ const PersonForm = ({ addPerson }: PersonFormProps) => {
 							onChange={handleChange}
 						/>
 						<label>{gender}</label>
-					</Fragment>
+					</div>
 				))}
 			</div>
 			<div>
-				<Input
+				<SalaryInput
 					label='Expected Salary'
-					type='number'
+					defaultCurrency={Currency.CHF}
 					name='salary'
-					id='salary'
 					value={person.salary}
 					handleChange={handleChange}
-					required
 				/>
-				<span>:</span>
-				<select name='currency' onChange={handleCurrencyChange}>
-					{Object.values(Currency).map((currency) => (
-						<option key={currency} value={currency}>
-							{currency}
-						</option>
-					))}
-				</select>
 			</div>
 			<input type='submit' />
 		</form>
