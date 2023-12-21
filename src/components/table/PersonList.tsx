@@ -16,7 +16,7 @@ const PersonList = ({ persons, removePerson }: PersonListProps) => {
 			year: 'numeric',
 		};
 
-		return newDate.toLocaleDateString('en-US', options);
+		return newDate.toLocaleDateString('en-US', options).replaceAll(',', '');
 	};
 
 	return (
