@@ -1,11 +1,11 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
-import { Gender } from '../../types/Gender';
 import { Currency } from '../../types/Currency';
 import { Person } from '../../types/Person';
 import { PersonFormProps } from './PersonForm.types';
 import './personForm.style.css';
 import Input from '../input/Input';
 import SalaryInput from '../salaryInput/SalaryInput';
+import GenderInput from '../genderInput/GenderInput';
 
 const personInitialState = {
 	name: '',
@@ -33,7 +33,7 @@ const PersonForm = ({ addPerson }: PersonFormProps) => {
 	};
 
 	return (
-		<form onSubmit={handleOnSubmit}>
+		<form onSubmit={handleOnSubmit} id='form'>
 			<Input
 				label='First Name'
 				type='text'
@@ -52,32 +52,15 @@ const PersonForm = ({ addPerson }: PersonFormProps) => {
 				handleChange={handleChange}
 				required
 			/>
-			<div>
-				<label htmlFor='gender'>Gender:</label>
-				{Object.values(Gender).map((gender) => (
-					<div key={gender}>
-						<input
-							type='radio'
-							name='gender'
-							id={gender}
-							value={gender}
-							checked={gender === person.gender}
-							onChange={handleChange}
-						/>
-						<label>{gender}</label>
-					</div>
-				))}
-			</div>
-			<div>
-				<SalaryInput
-					label='Expected Salary'
-					defaultCurrency={Currency.CHF}
-					name='salary'
-					value={person.salary}
-					handleChange={handleChange}
-				/>
-			</div>
-			<input type='submit' />
+			<GenderInput personGender={person.gender} handleChange={handleChange} />
+			<SalaryInput
+				label='Expected Salary'
+				defaultCurrency={Currency.CHF}
+				name='salary'
+				value={person.salary}
+				handleChange={handleChange}
+			/>
+			<input type='submit' className='submit-btn' />
 		</form>
 	);
 };

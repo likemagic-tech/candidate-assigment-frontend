@@ -7,10 +7,22 @@ const PersonList = ({ persons, removePerson }: PersonListProps) => {
 		removePerson(person);
 	};
 
+	const formatDate = (date: string) => {
+		const newDate = new Date(date);
+		const options: Intl.DateTimeFormatOptions = {
+			weekday: 'short',
+			month: 'short',
+			day: 'numeric',
+			year: 'numeric',
+		};
+
+		return newDate.toLocaleDateString('en-US', options);
+	};
+
 	return (
-		<div>
+		<div className='person-list'>
 			{persons.length > 0 ? (
-				<div>
+				<div className='row'>
 					<h3>User</h3>
 					<table>
 						<thead>
@@ -22,14 +34,18 @@ const PersonList = ({ persons, removePerson }: PersonListProps) => {
 							</tr>
 						</thead>
 						<tbody>
-							{persons.map((person, index) => (
-								<tr key={`${person.name} ${index}`}>
+							{persons.map((person) => (
+								<tr key={`${person.name}`}>
 									<td>{person.name}</td>
 									<td>{person.gender}</td>
-									<td>{person.birthdate}</td>
+									<td>{formatDate(person.birthdate)}</td>
 									<td>{person.salary}</td>
 									<td>
-										<button type='button' onClick={() => handleRemove(person)}>
+										<button
+											className='remove-btn'
+											type='button'
+											onClick={() => handleRemove(person)}
+										>
 											Delete
 										</button>
 									</td>

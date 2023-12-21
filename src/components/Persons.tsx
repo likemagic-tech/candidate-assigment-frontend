@@ -2,6 +2,7 @@ import { useState } from 'react';
 import PersonForm from './form/PersonForm';
 import PersonList from './table/PersonList';
 import { Person } from '../types/Person';
+import Logo from './logo/Logo';
 
 const Persons = () => {
 	const [persons, setPersons] = useState<Person[]>([]);
@@ -16,6 +17,7 @@ const Persons = () => {
 
 	return (
 		<>
+			<Logo />
 			<PersonForm addPerson={addPerson} />
 			<PersonList persons={persons} removePerson={removePerson} />
 		</>

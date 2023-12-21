@@ -1,8 +1,7 @@
-import React from 'react';
-
+import './personList.style.css';
 const EmptyPersonList = () => {
 	return (
-		<div>
+		<div className='row'>
 			<p>No persons added, please add new Person.</p>
 		</div>
 	);

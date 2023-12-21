@@ -2,6 +2,7 @@ import { ChangeEvent } from 'react';
 import Input from '../input/Input';
 import { SalaryInputProps } from './SalaryInput.types';
 import { Currency } from '../../types/Currency';
+import './salaryInput.style.css';
 
 const SalaryInput = ({
 	value,
@@ -41,7 +42,7 @@ const SalaryInput = ({
 	};
 
 	return (
-		<div>
+		<div className='salary'>
 			<Input
 				label={label}
 				type='number'

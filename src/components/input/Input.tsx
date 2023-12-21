@@ -1,5 +1,5 @@
 import { InputProps } from './Input.types';
-
+import './input.style.css';
 const Input = ({
 	label,
 	type,
@@ -10,9 +10,9 @@ const Input = ({
 	required,
 }: InputProps) => {
 	return (
-		<div>
+		<div className='row'>
 			<label htmlFor={name}>
-				{label}: {required ? <span>*</span> : ''}
+				{label}: {required ? <span id='required'>*</span> : ''}
 			</label>
 			<input
 				type={type}

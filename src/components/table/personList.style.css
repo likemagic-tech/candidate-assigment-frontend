@@ -1,0 +1,32 @@
+.row {
+	padding: 15px 15px;
+}
+
+.person-list table {
+	width: 100%;
+	text-align: center;
+}
+
+.person-list table tbody td {
+	padding: 15px 0;
+	border-bottom: 1px solid black;
+}
+
+.empty-person-list {
+	padding: 15px 15px;
+}
+
+.person-list .remove-btn {
+	margin: 15px 15px;
+	padding: 10px;
+	background-color: #ffffff;
+	border-radius: 10%;
+	border: 1px solid red;
+	color: red;
+}
+
+.person-list .remove-btn:hover {
+	background-color: red;
+	color: #ffffff;
+	cursor: pointer;
+}
